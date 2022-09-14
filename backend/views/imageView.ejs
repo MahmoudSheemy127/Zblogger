@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Upload images to MONGODB</h1>
+        <form method="POST" action="/img" enctype="multipart/form-data">
+            <div>
+                <label>Image Title</label>
+                <input name="title" type="text" placeholder="Cute image" />
+            </div>
+            <div>
+                <label>Image Description</label>
+                <input name="desc" type="text" placeholder="Cute image Description" />
+            </div>
+            <div>
+                <label>Insert images</label>
+                <input type="file" placeholder="" name="image" id="image" />
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        <div>
+            <% data.map(function(img) { %>
+                <div>
+                    
+                    <img src="<%=img.img%>"/>
+                    <h3><%=img.title%></h3>
+                    <h6><%=img.desc%></h6>
+                </div>
+           <% }) %>
+        </div>
+    </div>
+</body>
+</html>
